@@ -1,0 +1,57 @@
+//declaramos el nombre del paquete
+package precalzar;
+//Importamos el metodo para calculo de numeros Ramdom
+import java.util.Random; 
+
+public class Precios_al_azar {
+     static int arregloprecios[] = new int [10];
+    //declaramos la clase para crear los numero al Azar
+    static Random r = new Random();
+    
+   public static void main(String[] args) { //Metodo Main Class (pricipal) es fundamental para que java pueda ejecutar el programa.
+            //se procede a colocar el Llamado de los metodos 
+            llenararreglo(); //Metodo que llena el Arreglo
+            imprimirArreglo(); //llama al metodo para imprimir el arreglo
+            System.out.println();//a la hora de mostrar el programa colocal el puhnto de insercion en la siguiente linea
+            sumarArreglo(); //metodo que se encarga de sumar el arreglo
+            multiplicacion();//metodo para Calcular La multiplicacion
+            }
+   //Metodo utilizado para llenar el arreglos con los numero aleatorios
+   public static void llenararreglo() {
+   //estructura For  para que llene el arreglo
+   for (int cont = 0; cont<10; cont++){
+   //instruccion para generar los numero enteros al azar
+        int valorDado = r.nextInt(500) + 1; //Numero al azar del 1 al 10
+        //Asignacion de los numeros a cada espacio del arreglo
+        arregloprecios[cont] = valorDado;
+        }
+   }
+   //Metodo para mostrar en consola los valores contwenido en el arreglo
+   public static void imprimirArreglo(){
+           
+           System.out.print ("los Precions almacenados del arreglo son: | ");
+           for (int cont = 0; cont < 10; cont++){
+           System.out.print(arregloprecios[cont] + " | ");
+            } 
+    }
+   //Metodo Para Sumar Todos Los Valores
+   public static void sumarArreglo(){
+   //se declara y se incializa una Variable Local
+   int suma = 0, prom = 0;
+   //se recorre el arreglo y se van sumando los numero que tiene
+   for (int cont=0; cont < 10; cont++){
+       suma += arregloprecios[cont];
+   }
+   prom = suma/10;
+   System.out.print("La suma de los precios del arreglo es = " + suma);
+   System.out.println("El promedio de los precios es es: " + prom);
+   }
+   public static void multiplicacion(){
+   int multi  = 1;
+   for (int cont = 0; cont < 10; cont++){
+        multi *= arregloprecios[cont];
+   }
+   System.out.println("El Resultado de la Multiplicacion es = " + multi);
+   }
+   }
+
